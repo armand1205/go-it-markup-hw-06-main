@@ -55,7 +55,26 @@ ul {
   text-align: left;
   text-decoration-line: none;
 }
+.active-page {
+  display: inline-block;
+  position: relative;
+}
 
+.active-page::after {
+  background-color: var(--webstudio-color);
+  border-radius: 2px;
+  bottom: -23px;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.active:hover,
+.active:focus {
+  color: var(--webstudio-color);
+}
 .navigation {
   align-items: baseline;
   display: flex;
@@ -247,12 +266,35 @@ a {
   text-align: center;
 }
 
-.what-we-do-photo {
-  align-items: center;
+.what-we-do-photos {
   display: flex;
-  flex-wrap: nowrap;
   gap: 30px;
   justify-content: center;
+}
+
+.what-we-do-item {
+  position: relative;
+}
+
+.overlay-text {
+  align-items: center;
+  background: rgba(47, 48, 58, 0.8);
+  bottom: 5px;
+  color: #fff;
+  display: flex;
+  font-family: var(--webstudio-font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  justify-content: center;
+  left: 0;
+  letter-spacing: 0.42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 /* Our Team Section*/
@@ -311,9 +353,6 @@ a {
   justify-content: center;
   align-items: center;
   margin: 0 0 30px 0;
-}
-
-.our-team-icons {
   gap: 10px;
 }
 
@@ -476,6 +515,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color var(--transition);
 }
 
 .footer-icon svg {
